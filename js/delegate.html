@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event delegate</title>
+</head>
+<body>
+   <h2>Event delegate</h2> 
+   <ul id="item-container">
+    <li class="list">Lorem, ipsum.</li>
+    <li class="list">Repudiandae, cumque.</li>
+    <li class="list">Numquam, exercitationem.</li>
+    <li class="list">Distinctio, illo.</li>
+    <li class="list">Itaque, voluptatibus.</li>
+    <li class="list">Beatae, cum!</li>
+   </ul>
+   <button id="new-item">Add item</button>
+   <script>
+    // const items = document.getElementsByClassName('list');
+    // for(const item of items){
+    //     item.addEventListener('click', function(){
+    //     document.getElementById('item-container').removeChild(item)
+    //     })
+    // }
+
+    const items = document.getElementsByClassName('list');
+    for(const item of items){
+        item.addEventListener('click', function(){
+            document.getElementById('item-container').removeChild(item)
+        })
+    }
+
+     document.getElementById('new-item').addEventListener('click', function(){
+        const li = document.createElement('li');
+        li.innerText = 'brand new user';
+        li.classList.add('list')
+        const parent = document.getElementById('item-container');
+        parent.appendChild(li)
+     })
+
+     document.getElementById('item-container').addEventListener('click', function(event){
+        event.target.parentNode.removeChild(event.target)
+     })
+    
+   </script>
+</body>
+</html>

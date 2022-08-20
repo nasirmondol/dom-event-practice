@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event summary</title>
+</head>
+<body>
+    <h2 id="mouse-event">More mouse event</h2>
+    <button onclick="greenBtn()">Click me: Green</button>
+    <input id="input-btn" type="text" placeholder="email">
+    <script>
+        function greenBtn(){
+            document.body.style.backgroundColor = 'green'
+        }
+
+        document.getElementById('input-btn').addEventListener('keyup', function(event){
+            console.log(event.target.value);
+        } )
+
+        // mouse move event
+        // document.getElementById('mouse-event').addEventListener('mousemove', function(){
+        //     console.log('mouse is moving... giving me shursuri')
+        // })
+        document.getElementById('mouse-event').addEventListener('mouseenter', function(){
+            console.log('mouse is moving... giving me shursuri')
+        })
+    </script>
+</body>
+</html>
